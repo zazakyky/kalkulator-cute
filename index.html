@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kalkulator Imut</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="calculator">
+    <div class="character">
+      <img src="https://png.pngtree.com/png-clipart/20230825/original/pngtree-cute-cartoon-bunny-character-jumping-picture-image_8641972.png" alt="Bunny Character">
+    </div>
+    <input type="text" class="display" id="display" readonly>
+
+    <select id="mode" onchange="changeMode()">
+      <option value="normal">Normal</option>
+      <option value="binary">Desimal ke Biner</option>
+      <option value="hex">Desimal ke Hexa</option>
+      <option value="toDec">Biner/Hexa ke Desimal</option>
+    </select>
+
+    <div class="buttons">
+      <button onclick="playClick(); clearDisplay()">🧹</button>
+      <button onclick="playClick(); backspace()">⬅️</button>
+      <button onclick="playClick(); append('/')">➗</button>
+      <button onclick="playClick(); append('*')">✖️</button>
+
+      <button onclick="playClick(); append('7')">7️⃣</button>
+      <button onclick="playClick(); append('8')">8️⃣</button>
+      <button onclick="playClick(); append('9')">9️⃣</button>
+      <button onclick="playClick(); append('-')">➖</button>
+
+      <button onclick="playClick(); append('4')">4️⃣</button>
+      <button onclick="playClick(); append('5')">5️⃣</button>
+      <button onclick="playClick(); append('6')">6️⃣</button>
+      <button onclick="playClick(); append('+')">➕</button>
+
+      <button onclick="playClick(); append('1')">1️⃣</button>
+      <button onclick="playClick(); append('2')">2️⃣</button>
+      <button onclick="playClick(); append('3')">3️⃣</button>
+      <button onclick="playClick(); calculate(); showConfetti()">🟰</button>
+
+      <button class="wide" onclick="playClick(); append('0')">0️⃣</button>
+      <button onclick="playClick(); append('.')">🔸</button>
+    </div>
+  </div>
+
+  <audio id="clickSound" src="https://cdn.pixabay.com/audio/2023/03/22/audio_1bb78843c7.mp3"></audio>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
